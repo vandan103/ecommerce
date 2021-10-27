@@ -6,7 +6,7 @@
 <style>
 h1
 {
-color: white;
+color: black;
 text-align: center;
 font-size: 100px;
 }</style>
