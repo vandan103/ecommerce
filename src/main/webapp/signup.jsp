@@ -7,6 +7,8 @@
 <body>
 	<div id='container'>
 		<div class='signup'>
+		<!--whenever this form has been submitted, response will be send to  
+		signupAction.jsp page-->
 			<form action="signupAction.jsp" method="post">
 				<input type="text" name="name" placeholder=" enter your name "
 					required="required">
@@ -14,7 +16,8 @@
 					placeholder="enter your email " required="required">
 				 <input type="text" name="number" placeholder="enter your number "
 					required="required"> 
-				select security question<select name="question">
+				select security question
+				<select name="question">
 					<option value="pet name">pet name</option>
 					<option value="car name">car name</option>
 				</select> 
@@ -26,7 +29,7 @@
 			</form>
 
 			<h2>
-				<a href="">Login</a>
+				<a href="login.jsp">Login</a>
 			</h2>
 		</div>
 		
