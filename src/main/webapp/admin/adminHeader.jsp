@@ -1,3 +1,6 @@
+
+<!-- whenever any error occurs, 
+it will send response to error.jsp page -->
 <%@page errorPage="error.jsp" %>
 <!DOCTYPE html>
 <html>
@@ -9,6 +12,7 @@
     <!--Header-->
     <br>
     <div class="topnav sticky">
+
    <% String email=session.getAttribute("email").toString(); %>
             <center><h2>Online shopping</h2></center>
             <a href="addNewProduct.jsp">Add New Product <i class='fas fa-plus-square'></i></a>
