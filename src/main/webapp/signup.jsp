@@ -22,7 +22,7 @@
 				</select> <input type="text" name="answer"
 					placeholder="enter answer for question" required="required">
 				<input type="password" name="password" placeholder="enter password"
-					pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})$"
+					pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$"
 					title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
 					required="required"> <input type="submit" value="signup">
 			</form>
@@ -52,6 +52,12 @@
 			<%
 			}
 			%>
+			<%
+			if ("exist".equals(msg)) {
+			%>
+			<h1>Email Already Registered Please <a href="login.jsp">Login</a></h1>
+			<%
+			}%>
 
 			<h2>Online Shopping</h2>
 			<p>The Online Shopping System is the application that allows the
