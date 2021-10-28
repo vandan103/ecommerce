@@ -10,9 +10,11 @@
 		<div class='signup'>
 			<form action="loginAction.jsp" method="post">
 				<input name="email" type="email" placeholder="enter your email"
-					required="required"> 
+					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+					title="Please Enter Valid Email ID" required="required"> 
 					<input name="password" type="password"
-					placeholder="enter your password" required="required"> <input
+					placeholder="enter your password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})$"
+					title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required="required"> <input
 					type="submit" value="login">
 
 			</form>
