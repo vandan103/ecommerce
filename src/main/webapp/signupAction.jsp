@@ -2,6 +2,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 
 <% 
+/* ensure that in getgetParameter(name should be matched with the name given in <form> tag in signup.jsp) */
 String name=request.getParameter("name");
 String email=request.getParameter("email");
 String number=request.getParameter("number");
@@ -35,11 +36,4 @@ catch(Exception e){
 	
 }
 
-
-
-
-
-
-
- 
 %>
