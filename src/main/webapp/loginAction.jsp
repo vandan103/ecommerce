@@ -6,7 +6,7 @@
 String email = request.getParameter("email");
 String password = request.getParameter("password");
 
-if ("admin@gmail.com".equals(email) && "admin".equals(password)) {
+if ("admin@gmail.com".equals(email) && "Admin@123".equals(password)) {
 	session.setAttribute("email", email);
 	response.sendRedirect("admin/adminHome.jsp");
 

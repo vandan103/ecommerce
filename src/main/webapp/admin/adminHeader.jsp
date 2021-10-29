@@ -16,6 +16,7 @@ it will send response to error.jsp page -->
    <% String email=session.getAttribute("email").toString(); %>
             <center><h2>Online shopping</h2></center>
             <a href="addNewProduct.jsp">Add New Product <i class='fas fa-plus-square'></i></a>
+             <a href="addNewCategory.jsp">Add New Category <i class='fas fa-plus-square'></i></a>
             <a href="">All Products & Edit Products <i class='fab fa-elementor'></i></a>
             <a href="">Messages Received <i class='fas fa-comment-alt'></i></a>
             <a href="">Orders Received <i class="fas fa-archive"></i></a>

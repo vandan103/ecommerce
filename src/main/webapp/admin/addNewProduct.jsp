@@ -1,4 +1,5 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+
+<%@page import="project.ConnectionProvider, project.CategoryProvider,java.sql.*"%>
 <%@include file="adminHeader.jsp" %>
 <%@include file="../footer.jsp" %>
 <html>
@@ -23,29 +24,8 @@ if("invalid".equals(msg))
 %>
 <h3 class="alert">Some thing went wrong! Try Again!</h3>
 <%} %>
-<%
 
-int id=1;
-
-// try {
-// 	Connection con = ConnectionProvider.getcon();
-// 	Statement st = con.createStatement();
-// 	ResultSet rs = st.executeQuery("select max(id) from product");
-// 	while(rs.next()){
-// 		id=rs.getInt(1);
-// 	id=id+1;
-	
-// 	}
-// 	}
-// catch(Exception e){
-// 	out.print(e);
-// }
-
-%>
-<form action="addNewProductAction.jsp" method="post">
-<%-- <h3 style="color: yellow;">Product ID:  <% out.println(id); %> </h3> --%>
-<%-- <input type="hidden" name="id" value="<% out.println(id); %>"> --%>
-
+<form action="addNewProductAction.jsp" method="post" enctype="multipart/form-data">
 
 <div class="left-div">
 
@@ -58,8 +38,16 @@ int id=1;
 
 <div class="right-div">
 <h3>Enter Category</h3>
- <input class="input-style" type="text" name="category" placeholder="enter Category"
-					required="required">
+ <select class="input-style" name="category" required>
+ <option value="">Select Category</option>
+  <% ResultSet rs= CategoryProvider.getCategory(); 
+    while(rs.next()){
+  %>
+   <option value= " <%= rs.getString(2) %>" > <%= rs.getString(2) %></option><%} %>
+     
+   
+   </select>
+ 
  
 <hr>
 </div>
@@ -79,6 +67,13 @@ int id=1;
       <option value="no">No</option>
    
    </select>
+<hr>
+</div>
+<div class="left-div">
+<h3>Upload Image</h3>
+ <input class="input-style" type="file" name="photo" placeholder="Upload Image"  accept="image/png, image/gif, image/jpeg" size="50"
+					required="required">
+ 
 <hr>
 </div>
  <button class="button" >save<i class='far fa-arrow-alt-circle-right'></i></button>
