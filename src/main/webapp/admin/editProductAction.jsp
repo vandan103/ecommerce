@@ -1,0 +1,25 @@
+<%@page import="project.ConnectionProvider, java.sql.*"%>
+
+<%
+String id = request.getParameter("id");
+String name = request.getParameter("name");
+String category = request.getParameter("category");
+String price = request.getParameter("price");
+String active = request.getParameter("active");
+
+try {
+	Connection con = ConnectionProvider.getcon();
+	Statement st = con.createStatement();
+	st.executeUpdate("update product set name='" + name + "',category='" + category + "',price='" + price + "',active='"
+	+ active + "' where id='" + id + "'");
+	if(active.equals("No")){
+		st.executeUpdate("delete from cart where pid='"+id+"' and address is NULL");
+	}
+	response.sendRedirect("allProductEditProduct.jsp?msg=done");
+} catch (Exception e) {
+	System.out.print("exception occurs" + e);
+	response.sendRedirect("allProductEditProduct.jsp?msg=invalid");
+
+	//response.sendRedirect("forgotPassword.jsp?msg=invalid");
+}
+%>

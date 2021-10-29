@@ -4,10 +4,12 @@
 	pageEncoding="ISO-8859-1"%>
 <%
 String email = request.getParameter("email");
+
 String password = request.getParameter("password");
 
 if ("admin@gmail.com".equals(email) && "Admin@123".equals(password)) {
 	session.setAttribute("email", email);
+
 	response.sendRedirect("admin/adminHome.jsp");
 
 } else {
@@ -19,6 +21,7 @@ if ("admin@gmail.com".equals(email) && "Admin@123".equals(password)) {
 		//System.out.println(rs);
 		if (rs.next()) {
 	        session.setAttribute("email", email);
+	    	session.setAttribute("name", rs.getString(2));
 			response.sendRedirect("home.jsp");
 		} else {
 

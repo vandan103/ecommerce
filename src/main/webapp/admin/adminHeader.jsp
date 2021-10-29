@@ -22,7 +22,7 @@ it will send response to error.jsp page -->
             <a href="">Orders Received <i class="fas fa-archive"></i></a>
             <a href="">Cancel Orders <i class='fas fa-window-close'></i></a>
             <a href="">Delivered Orders <i class='fas fa-dolly'></i></a>
-            <a href="">Logout <i class='fas fa-share-square'></i></a>
+            <a href="../logout.jsp">Logout <i class='fas fa-share-square'></i></a>
           </div>
            <br>
            <!--table-->
