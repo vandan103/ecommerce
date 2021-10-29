@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +12,7 @@
 					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Please Enter Valid Email ID" required="required"> 
 					<input name="password" type="password"
-					placeholder="enter your password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})$"
+					placeholder="enter your password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$"
 					title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" required="required"> <input
 					type="submit" value="login">
 
