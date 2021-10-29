@@ -7,8 +7,11 @@
 <body>
 	<div id='container'>
 		<div class='signup'>
+		<!--whenever this form has been submitted, response will be send to  
+		signupAction.jsp page-->
 			<form action="signupAction.jsp" method="post">
 				<input type="text" name="name" placeholder=" enter your name "
+
 					required="required"> <input type="email" name="email"
 					placeholder="enter your email "
 					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
@@ -17,6 +20,7 @@
 					pattern="^[0-9]{10}$" title="Mobile Number Should Be 10 Digit only"
 					required="required"> select security question<select
 					name="question">
+
 					<option value="pet name">pet name</option>
 					<option value="car name">car name</option>
 				</select> <input type="text" name="answer"
