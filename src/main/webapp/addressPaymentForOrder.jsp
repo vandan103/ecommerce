@@ -7,8 +7,8 @@
 <script src='https://kit.fontawesome.com/a076d05399.js'></script>
 <title>Home</title>
 <script>
-if(window.history.forward(1) !=null))
-{ window.history.forward(1);}
+if(window.history.forward(1) !=null)
+window.history.forward(1);
 </script>
 </head>
 <body>
@@ -131,7 +131,7 @@ try {
 <h3 style="color: red">*This mobile number will also updated to your profile</h3>
 </div>
 <div class="right-div">
-<h3 style="color: red">*If you enter wrong transaction id then your order will we can cancel!</h3>
+<h3 style="color: red">*If you enter wrong transa ction id then your order will we can cancel!</h3>
 
 
 <button class="button" type="submit">Proceed to order bill and Save <i class='far fa-arrow-alt-circle-right'></i>  	</button>

@@ -1,3 +1,6 @@
+<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@include file="header.jsp"%>
+<%@include file="footer.jsp"%>
 <html>
 <head>
 <link rel="stylesheet" href="css/messageUs.css">
@@ -5,13 +8,37 @@
 <title>Message Us</title>
 </head>
 <body>
-<div style="color: white; text-align: center; font-size: 30px;">Message Us <i class='fas fa-comment-alt'></i></div>
+	<div style="color: white; text-align: center; font-size: 30px;">
+		Message Us <i class='fas fa-comment-alt'></i>
+	</div>
+	<%
+	String msg = request.getParameter("msg");
+	if ("valid".equals(msg)) {
+	%>
+	<h3 style="text-align: center; color: yellow;">Message
+		successfully sent. Our team will contact you soon!</h3>
+	<%
+	}
+	%>
+	<%
+	if ("invalid".equals(msg)) {
+	%>
+	<h3 style="text-align: center;">Some thing Went Wrong! Try Again!</h3>
+	<%
+	}
+	%>
+	<form action="messageUsAction.jsp" method="post">
+		<input class="input-style" type="text" name="subject"
+			placeholder=" enter your subject " required="required">
+		<hr>
+		<textarea class="input-style" name="body"
+			placeholder=" enter your message " required="required"></textarea>
+<hr>
+<button class="button" type="submit">send<i class='far fa-arrow-alt-circle-right'></i></button>
 
-<h3 style="text-align:center; color:yellow;">Message successfully sent. Our team will contact you soon!</h3>
-
-<h3 style="text-align:center; ">Some thing Went Wrong! Try Again!</h3>
-
-
-<br><br><br>
+	</form>
+	<br>
+	<br>
+	<br>
 </body>
 </html>

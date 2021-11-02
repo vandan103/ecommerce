@@ -10,9 +10,8 @@
 		<!--whenever this form has been submitted, response will be send to  
 		signupAction.jsp page-->
 			<form action="signupAction.jsp" method="post">
-				<input type="text" name="name" placeholder=" enter your name "
-
-					required="required"> <input type="email" name="email"
+				<input type="text" name="name" placeholder=" enter your name " required="required">
+				 <input type="email" name="email"
 					placeholder="enter your email "
 					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Please Enter Valid Email ID" required="required"> <input
