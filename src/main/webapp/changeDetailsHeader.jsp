@@ -1,4 +1,5 @@
 <%@page errorPage="error.jsp" %>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <!DOCTYPE html>
 <html>
 <head>

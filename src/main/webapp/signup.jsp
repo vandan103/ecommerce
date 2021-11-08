@@ -9,9 +9,10 @@
 		<div class='signup'>
 		<!--whenever this form has been submitted, response will be send to  
 		signupAction.jsp page-->
-			<form action="signupAction.jsp" method="post">
-				<input type="text" name="name" placeholder=" enter your name " required="required">
-				 <input type="email" name="email"
+			<form action="signup" method="post">
+				<input type="text" name="name" placeholder=" enter your name "
+
+					required="required"> <input type="email" name="email"
 					placeholder="enter your email "
 					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Please Enter Valid Email ID" required="required"> <input
@@ -25,7 +26,7 @@
 				</select> <input type="text" name="answer"
 					placeholder="enter answer for question" required="required">
 				<input type="password" name="password" placeholder="enter password"
-					pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,8})$"
+					pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$"
 					title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
 					required="required"> <input type="submit" value="signup">
 			</form>
@@ -55,6 +56,12 @@
 			<%
 			}
 			%>
+			<%
+			if ("exist".equals(msg)) {
+			%>
+			<h1>Email Already Registered Please <a href="login.jsp">Login</a></h1>
+			<%
+			}%>
 
 			<h2>Online Shopping</h2>
 			<p>The Online Shopping System is the application that allows the

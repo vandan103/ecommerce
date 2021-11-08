@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="header.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -116,9 +117,9 @@ h3 {
 				<td><i class="fa fa-inr"></i>
 					<%=rs1.getString(4)
 					%></td>
-				<td><a href="incDecQuantityAction.jsp?id=<%=rs1.getString(1)%>&quantity=inc"><i class='fas fa-plus-circle'></i></a><%= rs1.getString(8) %> <a	href="incDecQuantityAction.jsp?id=<%=rs1.getString(1)%>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
+				<td><a href="incDecQuantity?id=<%=rs1.getString(1)%>&quantity=inc"><i class='fas fa-plus-circle'></i></a><%= rs1.getString(8) %> <a	href="incDecQuantityAction.jsp?id=<%=rs1.getString(1)%>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
 				<td><i class="fa fa-inr"> <%=rs1.getInt(10) %></i></td>
-				<td><a href="removeFromCart.jsp?id=<%=rs1.getString(1) %>">Remove <i class='fas fa-trash-alt'></i></a></td>
+				<td><a href="removeFromCart?id=<%=rs1.getString(1) %>">Remove <i class='fas fa-trash-alt'></i></a></td>
 			</tr>
         <%}}catch(Exception e){ System.out.print(e); } %>
 		</tbody>

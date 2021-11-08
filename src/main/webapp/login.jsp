@@ -3,11 +3,15 @@
 <head>
 <link rel="stylesheet" href="css/signup-style.css">
 <title>Login</title>
+<script>
+if(window.history.forward(1) !=null)
+window.history.forward(1);
+</script>
 </head>
 <body>
 	<div id='container'>
 		<div class='signup'>
-			<form action="loginAction.jsp" method="post">
+			<form action="login" method="post">
 				<input name="email" type="email" placeholder="enter your email"
 					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Please Enter Valid Email ID" required="required"> 
@@ -19,7 +23,7 @@
 			</form>
 
 			<h2>
-				<a href="signup.jsp">SignUp</a>
+				<a href="signup">SignUp</a>
 			</h2>
 			<h2>
 				<a href="forgotPassword.jsp">Forgot Password?</a>

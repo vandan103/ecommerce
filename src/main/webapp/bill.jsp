@@ -1,6 +1,6 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="footer.jsp"%>
-
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="css/bill.css">
@@ -94,7 +94,7 @@ while (rs2.next()) {
 		<%} %>
 	</table>
 	<h3>Total:<%  out.println(total); %></h3>
-	<a href="continueShopping.jsp"><button class="button left-button">Continue
+	<a href="continueShopping"><button class="button left-button">Continue
 			Shopping</button></a>
 	<a onclick="window.print();"><button class="button right-button">Print</button></a>
 	<br>
