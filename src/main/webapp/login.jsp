@@ -7,7 +7,7 @@
 <body>
 	<div id='container'>
 		<div class='signup'>
-			<form action="loginAction.jsp" method="post">
+			<form action="login" method="post">
 				<input name="email" type="email" placeholder="enter your email"
 					pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
 					title="Please Enter Valid Email ID" required="required"> 

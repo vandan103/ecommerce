@@ -9,7 +9,7 @@
 		<div class='signup'>
 		<!--whenever this form has been submitted, response will be send to  
 		signupAction.jsp page-->
-			<form action="signupAction.jsp" method="post">
+			<form action="signup" method="post">
 				<input type="text" name="name" placeholder=" enter your name "
 
 					required="required"> <input type="email" name="email"
