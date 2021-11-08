@@ -69,13 +69,6 @@ if("invalid".equals(msg))
    </select>
 <hr>
 </div>
-<div class="left-div">
-<h3>Upload Image</h3>
- <input class="input-style" type="file" name="photo" placeholder="Upload Image"  accept="image/png, image/gif, image/jpeg" size="50"
-					required="required">
- 
-<hr>
-</div>
  <button class="button" >save<i class='far fa-arrow-alt-circle-right'></i></button>
 </form>
 </body>
