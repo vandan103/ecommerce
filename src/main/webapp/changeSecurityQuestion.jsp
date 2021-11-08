@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
@@ -24,7 +25,7 @@
 	}
 	%>
 
-	<form action="changeSecurityQuestionAction.jsp" method="post">
+	<form action="changeSecurityQuestion" method="post">
 
 		<h3>Select Your New Security Question</h3>
 		<select name="question" class="input-style">

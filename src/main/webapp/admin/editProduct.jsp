@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="adminHeader.jsp"%>
 <%@include file="../footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="../css/addNewProduct-style.css">
@@ -29,7 +30,7 @@
 		while (rs.next()) {
 	%>
 
-	<form action="editProductAction.jsp" method="post">
+	<form action="../editProduct" method="post">
 
 		<input type="hidden" name="id" value="<%out.print(id);%>">
 		<div class="left-div">

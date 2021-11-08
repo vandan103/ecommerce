@@ -3,6 +3,10 @@
 <head>
 <link rel="stylesheet" href="css/signup-style.css">
 <title>Login</title>
+<script>
+if(window.history.forward(1) !=null)
+window.history.forward(1);
+</script>
 </head>
 <body>
 	<div id='container'>
@@ -19,7 +23,7 @@
 			</form>
 
 			<h2>
-				<a href="signup.jsp">SignUp</a>
+				<a href="signup">SignUp</a>
 			</h2>
 			<h2>
 				<a href="forgotPassword.jsp">Forgot Password?</a>

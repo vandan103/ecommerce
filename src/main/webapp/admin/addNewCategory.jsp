@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="adminHeader.jsp" %>
 <%@include file="../footer.jsp" %>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="../css/addNewProduct-style.css">
@@ -24,7 +25,7 @@ if("invalid".equals(msg))
 <h3 class="alert">Some thing went wrong! Try Again!</h3>
 <%} %>
 
-<form action="addNewCategoryAction.jsp" method="post">
+<form action="../addNewCategory" method="post">
 <%-- <h3 style="color: yellow;">Product ID:  <% out.println(id); %> </h3> --%>
 <%-- <input type="hidden" name="id" value="<% out.println(id); %>"> --%>
 

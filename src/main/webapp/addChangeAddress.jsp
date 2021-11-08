@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
@@ -24,7 +25,7 @@ try{
 	ResultSet rs = st.executeQuery("select * from users where email='"+email+"' ");
 	while(rs.next()){
 %>
-<form action="addChangeAddressAction.jsp" method="post">
+<form action="addChangeAddress" method="post">
 <h3>Enter Address</h3>
   				<input class="input-style" type="text" name="address" placeholder=" enter your address "  value="<%= rs.getString(8)%>" required="required">
  
