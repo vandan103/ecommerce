@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="adminHeader.jsp"%>
 <%@include file="../footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -80,8 +81,8 @@
 			<td><%=rs.getString(13)%></td>
 			<td><%=rs.getString(14)%></td>
 			<td><%=rs.getString(15)%></td>
-			<td><a href="cancelOrderAction.jsp?id=<%=rs.getString(2)%>&email=<%=rs.getString(1)%>">Cancel <i class='fas fa-window-close'></i></a></td>
-			<td><a href="deliveredOrderAction.jsp?id=<%=rs.getString(2)%>&email=<%=rs.getString(1)%>">Delivered <i class='fas fa-dolly'></i></i></a></td>
+			<td><a href="../cancelOrder?id=<%=rs.getString(2)%>&email=<%=rs.getString(1)%>">Cancel <i class='fas fa-window-close'></i></a></td>
+			<td><a href="../deliveredOrder?id=<%=rs.getString(2)%>&email=<%=rs.getString(1)%>">Delivered <i class='fas fa-dolly'></i></i></a></td>
 		</tr>
 		<%
 		}

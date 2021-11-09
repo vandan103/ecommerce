@@ -1,3 +1,4 @@
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,7 @@
 <body>
 <div id='container'>
   <div class='signup'>
-  <form action="forgotPasswordAction.jsp" method="post">
+  <form action="forgotPassword" method="post">
                  <input type="email" name="email"
 					placeholder="enter your email " required="required">
 				 <input type="text" name="number" placeholder="enter your number "

@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
@@ -26,7 +27,7 @@ if("notmatch".equals(msg)){
 <h3 class="alert">Some thing went wrong! Try again!</h3>
 <%} %>
 
-<form action="changePasswordAction.jsp" method="post">
+<form action="changePassword" method="post">
 <h3>Enter Old Password</h3>
  				<input class="input-style" type="password" name="oldpwd" placeholder=" enter your old password " required="required">
  

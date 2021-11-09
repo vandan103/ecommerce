@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="header.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -63,7 +64,7 @@ h3 {
 				<td><%=rs.getString(3) %></td>
 				
 				<td><i class="fa fa-inr"></i><%= rs.getString(4) %> </td>
-				<td><a href="AddToCartAction.jsp?id=<%=rs.getString(1) %>">Add to cart <i class='fas fa-cart-plus'></i></a></td>
+				<td><a href="AddToCart?id=<%=rs.getString(1) %>">Add to cart <i class='fas fa-cart-plus'></i></a></td>
 			</tr>
 <%}}catch(Exception e){
 	System.out.print(e);

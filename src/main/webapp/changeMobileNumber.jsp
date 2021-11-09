@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="css/changeDetails.css">
@@ -31,7 +32,7 @@
 		ResultSet rs = st.executeQuery("select * from users where email='" + email + "' ");
 		while (rs.next()) {
 	%>
-	<form action="changeMobileNumberAction.jsp" method="post">
+	<form action="changeMobileNumber" method="post">
 		<h3>Enter Your New Mobile Number</h3>
 		<input class="input-style" type="text" name="number"
 			placeholder=" enter your number " value="<%=rs.getString(6)%>"

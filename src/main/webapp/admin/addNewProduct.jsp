@@ -1,6 +1,8 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+
+<%@page import="project.ConnectionProvider, project.CategoryProvider,java.sql.*"%>
 <%@include file="adminHeader.jsp" %>
 <%@include file="../footer.jsp" %>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="../css/addNewProduct-style.css">
@@ -23,29 +25,8 @@ if("invalid".equals(msg))
 %>
 <h3 class="alert">Some thing went wrong! Try Again!</h3>
 <%} %>
-<%
 
-int id=1;
-
-// try {
-// 	Connection con = ConnectionProvider.getcon();
-// 	Statement st = con.createStatement();
-// 	ResultSet rs = st.executeQuery("select max(id) from product");
-// 	while(rs.next()){
-// 		id=rs.getInt(1);
-// 	id=id+1;
-	
-// 	}
-// 	}
-// catch(Exception e){
-// 	out.print(e);
-// }
-
-%>
-<form action="addNewProductAction.jsp" method="post">
-<%-- <h3 style="color: yellow;">Product ID:  <% out.println(id); %> </h3> --%>
-<%-- <input type="hidden" name="id" value="<% out.println(id); %>"> --%>
-
+<form action="../addNewProduct" method="post">
 
 <div class="left-div">
 
@@ -58,8 +39,16 @@ int id=1;
 
 <div class="right-div">
 <h3>Enter Category</h3>
- <input class="input-style" type="text" name="category" placeholder="enter Category"
-					required="required">
+ <select class="input-style" name="category" required>
+ <option value="">Select Category</option>
+  <% ResultSet rs= CategoryProvider.getCategory(); 
+    while(rs.next()){
+  %>
+   <option value= " <%= rs.getString(2) %>" > <%= rs.getString(2) %></option><%} %>
+     
+   
+   </select>
+ 
  
 <hr>
 </div>

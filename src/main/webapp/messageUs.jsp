@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="header.jsp"%>
 <%@include file="footer.jsp"%>
+<% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
 <link rel="stylesheet" href="css/messageUs.css">
@@ -27,7 +28,7 @@
 	<%
 	}
 	%>
-	<form action="messageUsAction.jsp" method="post">
+	<form action="messageUs" method="post">
 		<input class="input-style" type="text" name="subject"
 			placeholder=" enter your subject " required="required">
 		<hr>
