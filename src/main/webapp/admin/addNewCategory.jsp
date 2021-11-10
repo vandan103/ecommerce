@@ -8,6 +8,7 @@
 <title>Add New Category</title>
 </head>
 <body>
+<a href="addNewCategory.jsp">Add New Category <i class='fas fa-plus-square'></i></a>
 
 
 <% String msg=request.getParameter("msg");
@@ -32,9 +33,9 @@ if("invalid".equals(msg))
 
 <div class="left-div">
 
- <h3>Enter Category</h3>
+ <h3>Edit Category</h3>
  <input class="input-style" type="text" name="category" placeholder=" enter Category "
-					required="required">
+					required="required" >
  
 <hr>
 </div>

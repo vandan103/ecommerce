@@ -27,7 +27,7 @@
 		while (rs.next()) {
 	%>
 
-	<form action="../editProduct" method="post">
+	<form action="../editProduct" method="post" enctype="multipart/form-data">
 
 		<input type="hidden" name="id" value="<%out.print(id);%>">
 		<div class="left-div">
@@ -42,7 +42,7 @@
 			<h3>Enter Category</h3>
 			<input class="input-style" type="text" name="category"
 				value="<%=rs.getString(3)%>" required="required">
-
+        Select Image : <input type="file" name="image"> 
 			<hr>
 		</div>
 
