@@ -56,7 +56,7 @@ public class AddToCart extends HttpServlet {
 				z = 1;
 			}
 			if (z == 1) {
-			  //increase quntity
+			  //increase quantity
 				st.executeUpdate("update cart set total='" + cart_total + "',quantity='" + quantity + "' where pid=" + pid
 				+ " and  email='" + email + "' and address is NULL  ");
 				response.sendRedirect("home.jsp?msg=exist");

@@ -17,6 +17,8 @@ h3 {
 	<div style="color: white; text-align: center; font-size: 30px;">
 		Home <i class="fa fa-institution"></i>
 	</div>
+	<%   String imgFileName=(String)request.getAttribute("img"); %>
+	
 	<%
 	String msg = request.getParameter("msg");
 	if ("added".equals(msg)) {
@@ -43,7 +45,7 @@ h3 {
 	<table>
 		<thead>
 			<tr>
-				
+				<th scope="col">Image</th>
 				<th scope="col">Name</th>
 				<th scope="col">Category</th>
 				<th scope="col"><i class="fa fa-inr"></i> Price</th>
@@ -60,6 +62,7 @@ h3 {
 			while(rs.next()){
 			%>
 			<tr>
+			    <td><img src="images/<%= rs.getString(6) %>" width="100" height="100" ></td>
 				<td><%=rs.getString(2) %></td>
 				<td><%=rs.getString(3) %></td>
 				
