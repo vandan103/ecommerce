@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.CartProvider,project.UserProvider, java.sql.*"%>
 <%@include file="footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,10 +17,7 @@ String email=session.getAttribute("email").toString();
 int total = 0;
 int sno = 0;
 try {
-
-	Connection con = ConnectionProvider.getcon();
-	Statement st = con.createStatement();
-	ResultSet rs = st.executeQuery("select sum(total) from cart where email='" + email + "' and address is NULL ");
+	ResultSet rs = CartProvider.getCartTotal(email);
 	while (rs.next()) {
 		total = rs.getInt(1);
 		System.out.print(total);
@@ -44,8 +41,7 @@ try {
         </thead>
         <tbody>
         <%
-			ResultSet rs1 = st.executeQuery("select * from product inner join cart on product.id=cart.pid and cart.email='" + email
-					+ "' and cart.address is NULL");
+			ResultSet rs1 = CartProvider.getCartProduct(email);
 			while (rs1.next()) {	
 			%>
         
@@ -65,7 +61,7 @@ try {
             <td><i class="fa fa-inr"></i>  <%= rs1.getString(10) %></td>
             </tr>
          <%}
-			ResultSet rs2 = st.executeQuery("select * from users where email='"+email+"' ");
+			ResultSet rs2 = UserProvider.getUser(email);
  			while(rs2.next()){
 				
 			
@@ -79,26 +75,26 @@ try {
  <div class="left-div">
  
  <h3>Enter Address</h3>
-<input class="input-style" type="text" name="address" value="<%= rs2.getString(8) %>" placeholder="enter address" required>
+<input class="input-style" type="text" name="address" value="<% if(rs2.getString(8)=="null")rs2.getString(8);%>" placeholder="enter address" required>
  </div>
 
 <div class="right-div">
 <h3>Enter city</h3>
-<input class="input-style" type="text" name="city" value="<%= rs2.getString(9) %>" placeholder="enter city" required>
+<input class="input-style" type="text" name="city" value="<%if(rs2.getString(9)=="null") rs2.getString(9); %>" placeholder="enter city" required>
 
 
 </div> 
 
 <div class="left-div">
 <h3>Enter State</h3>
-<input class="input-style" type="text" name="state" value="<%= rs2.getString(10) %>" placeholder="enter state" required>
+<input class="input-style" type="text" name="state" value="<% if(rs2.getString(10)=="null")rs2.getString(10); %>" placeholder="enter state" required>
 
 
 </div>
 
 <div class="right-div">
 <h3>Enter country</h3>
-<input class="input-style" type="text" name="country" value="<%= rs2.getString(11) %>" placeholder="enter country" required>
+<input class="input-style" type="text" name="country" value="<% if(rs2.getString(11)=="null")rs2.getString(11); %>" placeholder="enter country" required>
 
 </div>
 <h3 style="color: red">*If there is no address its mean that you did not set you address!</h3>
@@ -123,7 +119,7 @@ try {
 
 <div class="left-div">
 <h3>Mobile Number</h3>
-<input class="input-style" type="text" name="number" value="<%= rs2.getInt(6) %>" placeholder="enter mobile number" required>
+<input class="input-style" type="text" name="number" value="<%= rs2.getString(6) %>" placeholder="enter mobile number" required>
 
 <h3 style="color: red">*This mobile number will also updated to your profile</h3>
 </div>
