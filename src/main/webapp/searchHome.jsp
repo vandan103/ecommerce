@@ -37,7 +37,7 @@
 				<td><%=rs.getString(3)%></td>
 
 				<td><i class="fa fa-inr"></i><%=rs.getString(4)%></td>
-				<td><a href="addTOCartAction.jsp?id=<%=rs.getString(1)%>">Add
+				<td><a href="AddToCart?id=<%=rs.getString(1)%>">Add
 						to cart <i class='fas fa-cart-plus'></i>
 				</a></td>
 			</tr>

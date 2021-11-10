@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.CartProvider, java.sql.*"%>
 <%@include file="adminHeader.jsp"%>
 <%@include file="../footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
@@ -38,10 +38,7 @@
 		</tr>
 		<%
 		try {
-			Connection con = ConnectionProvider.getcon();
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery(
-			"select * from cart inner join product on cart.pid=product.id and cart.orderDate is not NULL and cart.status='cancel'  ");
+			ResultSet rs = CartProvider.getCanceledOrder();
 			while (rs.next()) {
 		%>
 		<tr>

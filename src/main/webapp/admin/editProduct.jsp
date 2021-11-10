@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.ProductProvider, java.sql.*"%>
 <%@include file="adminHeader.jsp"%>
 <%@include file="../footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
@@ -22,15 +22,12 @@
 	String id = request.getParameter("id");
 
 	try {
-
-		Connection con = ConnectionProvider.getcon();
-		Statement st = con.createStatement();
-		ResultSet rs = st.executeQuery("select * from product where id ='" + id + "'");
+		ResultSet rs = ProductProvider.getProduct(id);
 
 		while (rs.next()) {
 	%>
 
-	<form action="../editProduct" method="post">
+	<form action="../editProduct" method="post" enctype="multipart/form-data">
 
 		<input type="hidden" name="id" value="<%out.print(id);%>">
 		<div class="left-div">
@@ -45,7 +42,7 @@
 			<h3>Enter Category</h3>
 			<input class="input-style" type="text" name="category"
 				value="<%=rs.getString(3)%>" required="required">
-
+        Select Image : <input type="file" name="image"> 
 			<hr>
 		</div>
 

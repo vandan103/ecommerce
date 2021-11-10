@@ -1,16 +1,25 @@
 package com.controllers;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
+
 import java.sql.*;
 import project.ConnectionProvider;
 /**
  * Servlet implementation class addNewProduct
  */
+@MultipartConfig(maxFileSize = 16177215)
 @WebServlet("/addNewProduct")
 public class addNewProduct extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -41,32 +50,43 @@ public class addNewProduct extends HttpServlet {
 		System.out.println(category);
 		String price=request.getParameter("price");
 		String active=request.getParameter("active");
-		/*InputStream inputStream=null;
-		Part image
-		= request.getPart("photo");
-		System.out.println(image);
-		if (image != null) {
-			  
-		    // Prints out some information
-		    // for debugging
-		    System.out.println(
-		        image.getName());
-		    System.out.println(
-		        image.getSize());
-		    System.out.println(
-		        image.getContentType());
-
-		    // Obtains input stream of the upload file
-		        inputStream= image.getInputStream();
-		}*/
+		Part file=request.getPart("image");
+		String imageFileName=file.getSubmittedFileName();
+		System.out.println("Selected Image File Name : "+imageFileName);
+		String uploadPath="C:\\Users\\146732\\git\\repository2\\ecommerce demo\\src\\main\\webapp\\images\\"+imageFileName;
+		try
+		{
+		
+		FileOutputStream fos=new FileOutputStream(uploadPath);
+		InputStream is=file.getInputStream();
+		
+		byte[] data=new byte[is.available()];
+		is.read(data);
+		fos.write(data);
+		fos.close();
+		
+		}
+		
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		//String myloc=request.getParameter("img");
+		//System.out.println(myloc);
+	
 		try{
 
 		Connection con = ConnectionProvider.getcon();
-		PreparedStatement ps = con.prepareStatement("insert into product (name,category,price,active) values(?,?,?,?)");
+		PreparedStatement ps = con.prepareStatement("insert into product (name,category,price,active,image) values(?,?,?,?,?)");
 		ps.setString(1, name);
 		ps.setString(2, category);
 		ps.setString(3, price);
 		ps.setString(4, active);
+		ps.setString(5, imageFileName);
+		//File image= new File(myloc);
+		//FileInputStream fis=new FileInputStream(image);
+		//ps.setBinaryStream(5,(InputStream) fis, (int) (image.length()));
 		//ps.setBlob(5, inputStream);
 		ps.executeUpdate();
 		response.sendRedirect("admin/addNewProduct.jsp?msg=done");

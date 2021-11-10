@@ -15,8 +15,10 @@ it will send response to error.jsp page -->
 
    <% String email=session.getAttribute("email").toString(); %>
             <center><h2>Online shopping</h2></center>
-            <a href="addNewProduct.jsp">Add New Product <i class='fas fa-plus-square'></i></a>
-             <a href="addNewCategory.jsp">Add New Category <i class='fas fa-plus-square'></i></a>
+     
+             <a href="allProductEditProduct.jsp">Manage Product <i class='fas fa-plus-square'></i></a>
+             <a href="allCategoryEditCategory.jsp">Manage Category <i class='fas fa-plus-square'></i></a>
+               
              <a href="messagesReceived.jsp">Messages Received <i class='fas fa-comment-alt'></i></a>
             <a href="ordersReceived.jsp">Orders Received <i class="fas fa-archive"></i></a>
             <a href="cancelOrders.jsp">Cancel Orders <i class='fas fa-window-close'></i></a>
