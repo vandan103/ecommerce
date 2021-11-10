@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.CartProvider, java.sql.*"%>
 <%@include file="header.jsp"%>
 <%@include file="footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
@@ -55,10 +55,7 @@ h3 {
 		<thead>
 			<%
 			try {
-
-				Connection con = ConnectionProvider.getcon();
-				Statement st = con.createStatement();
-				ResultSet rs = st.executeQuery("select sum(total) from cart where email='" + email + "' and address is NULL ");
+				ResultSet rs = CartProvider.getCartTotal(email);
 				while (rs.next()) {
 					total = rs.getInt(1);
 					System.out.print(total);
@@ -90,8 +87,7 @@ h3 {
 		</thead>
 		<tbody>
 			<%
-			ResultSet rs1 = st.executeQuery("select * from product inner join cart on product.id=cart.pid and cart.email='" + email
-					+ "' and cart.address is NULL");
+			ResultSet rs1 =CartProvider.getCartProduct(email);
 			while (rs1.next()) {	
 			%>
 

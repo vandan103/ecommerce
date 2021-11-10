@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.ProductProvider, java.sql.*"%>
 <%@include file="header.jsp"%>
 <%@include file="footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
@@ -54,9 +54,8 @@ h3 {
 			<%
 			
 			try{
-			Connection con = ConnectionProvider.getcon();
-			Statement st = con.createStatement();
-			ResultSet rs = st.executeQuery("select * from product where active='yes'");
+			
+			ResultSet rs = ProductProvider.getProducts();
 			while(rs.next()){
 			%>
 			<tr>

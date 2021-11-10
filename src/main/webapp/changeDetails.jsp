@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.UserProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
@@ -14,9 +14,7 @@ hr
 <body>
 <%
 try{
-	Connection con = ConnectionProvider.getcon();
-	Statement st = con.createStatement();
-	ResultSet rs = st.executeQuery("select * from users where email='"+email+"'");
+	ResultSet rs = UserProvider.getUser(email);
 	while(rs.next()){
 %>
 <h3>Name:<%=rs.getString(2) %> </h3>

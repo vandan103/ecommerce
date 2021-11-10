@@ -1,4 +1,4 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider,project.MessageProvider, java.sql.*"%>
 <%@include file="adminHeader.jsp" %>
 <%@include file="../footer.jsp" %>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
@@ -31,7 +31,7 @@ h3
      try {
  		Connection con = ConnectionProvider.getcon();
  		Statement st = con.createStatement();
- 	  ResultSet rs= st.executeQuery("select * from message");	
+ 	  ResultSet rs= MessageProvider.getMessage();	
  	  while(rs.next()){
     %>
           <tr>
