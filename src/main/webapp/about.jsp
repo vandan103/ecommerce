@@ -1,35 +1,65 @@
-<%@include file="header.jsp"%>
-<%@include file="footer.jsp"%>
+<%@include file="header1.jsp"%>
 <%@page errorPage="error.jsp" %>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>About</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>About</title>
+	<style>
+		.inf-content{
+					    border:1px solid #DDDDDD;
+					    -webkit-border-radius:10px;
+					    -moz-border-radius:10px;
+					    border-radius:10px;
+					    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+					}
+	</style>
 </head>
 <body>
-<div style="color: white; text-align: center; font-size: 30px;">About <i class="fa fa-address-book"></i></div>
-<div style="background-color: white; padding:35px; font-size: 30px;">
-
-Hey everyone!! we are here
-<br>
-vandan bhingradiya
-<br>
-ujas patel
-<br>
-harsh shah
-<br>
-e-coomerce project
-<br>
-hi there we are java developers
-<br>
-Contact us at :- vandanujasharsh@gmail.com
-<br>
-or
-<br>
-contact us at linkedin
-</div>
+	<br><br>
+	<div style="padding-left: 23.5%" class="container bootstrap snippets bootdey ">
+		<div class="panel-body inf-content" style="max-width: 60%;">
+		    <div class="row"  >
+		        <div class="col-md-3">
+		        </div>
+		        <div class="col-md-6">
+		            <br>
+		            <div class="table-responsive">
+		            <table class="table table-user-information">		                
+		                <tbody>		
+		                           
+		                <form action="messageUs" method="post">             
+		                    Hey everyone!! we are here
+							<br>
+							<b>
+							Vandan Bhingradiya
+							<br>
+							Ujas Patel
+							<br>
+							Harsh shah
+							</b>
+							<br><br>
+							<b>
+							Project: <i><u>E-Commerce WebApp</u></i></b>
+							<br><br>
+							<b><i>Contact us at :- <u>vandanujasharsh@gmail.com</u></i></b>
+							<br>
+							or
+							<br>
+							<b>contact us at Linkedin</b>
+							
+																								
+																
+		                </form>  		                                          
+		                </tbody>
+		            </table>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>   
+	 
 
 </body>
 </html>

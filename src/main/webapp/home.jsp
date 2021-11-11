@@ -1,4 +1,5 @@
 <%@page import="project.ConnectionProvider,project.ProductProvider, java.sql.*"%>
+<%@include file="header1.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 
 <html lang="en">
@@ -17,37 +18,6 @@
 		<title>Home</title>
 	</head>
 <body>
-	<%String name=session.getAttribute("name").toString(); %>
-    <%String email=session.getAttribute("email").toString(); %>
-	<nav class="navbar navbar-expand-lg">
-		<div class="container">
-			<a class="navbar-brand" href="#">Ecommerce</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-				aria-controls="navbarScroll" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarScroll">
-				<ul class="navbar-nav m-auto my-2 my-lg-0">
-					<li class="nav-item"><a class="nav-link active" href="home.jsp">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="myCart.jsp">My Cart</a></li>
-					<li class="nav-item"><a class="nav-link" href="myOrders.jsp">My Orders</a></li>
-					<li class="nav-item"><a class="nav-link" href="changeDetails.jsp">Change Details</a></li>
-					<li class="nav-item"><a class="nav-link" href="messageUs.jsp">Message Us</a></li>
-					<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="logout.jsp">Logout</a></li>
-				</ul>
-				<form class="d-flex" action="searchHome.jsp" method="post">
-					<input class="px-2 search" type="search" placeholder="Search"
-						aria-label="Search">
-					<button class="btn0" type="submit">Search</button>
-				<%-- <a href="#"><h5 style="margin-right: 3px;margin-left: 2px;color:black;"><% out.println(name); %> <i class='glyphicon glyphicon-search'></i></h5></a> --%>
-				</form>
-			</div>
-		</div>
-	</nav>
-	
 	<section class="main" id="Harsh">
 		<div class="container py-5">
 			<div class="row py-5">

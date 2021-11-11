@@ -175,7 +175,7 @@
 	                            <tr>
 	                                <td>
 	                                    <figure class="itemside align-items-center">
-	                                        <div class="aside"><img src="images/<%=rs.getString(6) %>" class="img-sm"></div>
+	                                        <div class="aside"><img src="images/<%=rs.getString(21) %>" class="img-sm"></div>
 	                                        <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true"><%=rs.getString(17) %></a>
 	                                        </figcaption>
 	                                    </figure>

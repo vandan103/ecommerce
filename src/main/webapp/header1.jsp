@@ -42,7 +42,7 @@
 				</ul>
 				<form class="d-flex" action="searchHome.jsp" method="post">
 					<input class="px-2 search" type="search" placeholder="Search"
-						aria-label="Search">
+						name="search" aria-label="Search">
 					<button class="btn0" type="submit">Search</button>
 				<%-- <a href="#"><h5 style="margin-right: 3px;margin-left: 2px;color:black;"><% out.println(name); %> <i class='glyphicon glyphicon-search'></i></h5></a> --%>
 				</form>
