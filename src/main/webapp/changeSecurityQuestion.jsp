@@ -1,56 +1,79 @@
-<%@page import="project.ConnectionProvider, java.sql.*"%>
+<%@page import="project.ConnectionProvider, project.UserProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
-<%@include file="footer.jsp"%>
-<%@page errorPage="error.jsp" %>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
-<link rel="stylesheet" href="css/changeDetails.css">
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<title>Change Security Question</title>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<title>Change Security Question</title>
+	<style>
+		.inf-content{
+					    border:1px solid #DDDDDD;
+					    -webkit-border-radius:10px;
+					    -moz-border-radius:10px;
+					    border-radius:10px;
+					    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+					}
+	</style>
 </head>
 <body>
-	<%
-	String msg = request.getParameter("msg");
-	if ("done".equals(msg)) {
-	%>
-	<h3 class="alert">Your security Question successfully changed !</h3>
-	<%
-	}
-	%>
-	<%
-	if ("wrong".equals(msg)) {
-	%>
-	<h3 class="alert">Your Password is wrong!</h3>
-	<%
-	}
-	%>
-
-	<form action="changeSecurityQuestion" method="post">
-
-		<h3>Select Your New Security Question</h3>
-		<select name="question" class="input-style">
-
-			<option value="pet name">pet name</option>
-			<option value="car name">car name</option>
-		</select>
-
-		<hr>
-		<h3>Enter Your New Answer</h3>
-		<input class="input-style" type="text" name="newans"
-			placeholder=" enter your new answer " required="required">
-
-		<hr>
-		<h3>Enter Password (For Security)</h3>
-		<input class="input-style" type="password" name="password"
-			placeholder=" enter your password " required="required">	<hr>
-<button class="button" type="submit">Save <i class='far fa-arrow-alt-circle-right'></i></button>
-	</form>
-
-	
+	<br><br>
+	<div style="padding-left: 23.5%" class="container bootstrap snippets bootdey ">
+		<div class="panel-body inf-content" style="max-width: 60%;">
+		    <div class="row"  >
+		        <div class="col-md-3">
+		        </div>
+		        <div class="col-md-6">
+		            <br>
+		            <div class="table-responsive">
+		            <table class="table table-user-information">		                
+		                <tbody>			             
+		                <form action="changeSecurityQuestion" method="post">	                
+		                    <!-- <tr>    
+		                        <td> -->
+		                        	<h6>Select New Security Question</h6>
+		                        	<select name="question" class="form-select" aria-label="Default select example">								
+										  <option value="pet name" selected>Pet name</option>
+										  <option value="car name">Car name</option>										  
+									</select>
+									<br>									
+						
+									<div class="form-group">
+										<label for="inputAnswer">Enter New Answer</label>
+										<input type="text" name="newans" class="form-control" id="inputAnswer" placeholder="Eg: max" required>
+									</div>
+									<br>
+									<div class="form-group">
+										<label for="inputpass">Enter Password(For Security)</label>
+										<input type="password" name="password" class="form-control" id="inputpass" placeholder="Enter your password" required>
+									</div>									
+									
+									<br>
+		                        	<button type="submit" class="btn btn-primary">Update Security Question</button>
+		                        	<%
+										String msg = request.getParameter("msg");
+										if ("done".equals(msg)) {
+										%>
+										<h6 style="color:green;">Your security Question successfully changed !</h6>
+										<%
+										}
+										%>
+										<%
+										if ("wrong".equals(msg)) {
+										%>
+										<h6 style="color:red;">Your Password is wrong!</h6>
+										<%
+										}
+										%>
+									
+		                        	<br>
+		                </form>  		                                          
+		                </tbody>
+		            </table>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>   
 
 </body>
-<br>
-<br>
-<br>
 </html>

@@ -21,12 +21,10 @@
 </head>
 <body>
 <br><br><br>
-	<div class="container bootstrap snippets bootdey">
-		<div class="panel-body inf-content">
+	<div style="padding-left: 23.5%" class="container bootstrap snippets bootdey ">
+		<div class="panel-body inf-content" style="max-width: 60%;">
 		    <div class="row">
-		        <div class="col-md-4 size">
-		            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
-		            
+		        <div class="col-md-3"> 
 		        </div>
 		        <div class="col-md-6">
 		            <br>
@@ -36,10 +34,6 @@
 		                <form action="changePassword" method="post">	                
 		                    <tr>    
 		                        <td>
-		                            <!-- <strong>
-		                                <span class="text-primary"></span>    
-		                                Enter Old Password                                                
-		                            </strong> -->
 		                            <div class="form-group">
 									    	<label for="exampleInputPassword1">Enter Old Password</label>
 									    	<input type="password" class="form-control" id="exampleInputPassword1" name="oldpwd" placeholder="Password" required>
@@ -75,33 +69,7 @@
 										<%} %>
 		                        	
 		                        </td>
-		                        <!-- <td class="text-primary">
-		                            harsh
-		                        </td> -->
 		                    </tr>
-		                    
-		                    <!-- <tr>        
-		                        <td>
-		                            <strong>
-		                                <span class="text-primary"></span> 
-		                                Enter New Password                                                
-		                            </strong>
-		                        </td>
-		                        <td class="text-primary">
-		                            @gmail
-		                        </td>
-		                    </tr>
-		                    <tr>        
-		                        <td>
-		                            <strong>
-		                                <span class="text-primary"></span>
-		                                Confirm New Password
-		                            </strong>
-		                        </td>
-		                        <td class="text-primary">
-		                           1234
-		                        </td>
-		                    </tr> -->
 		                </form>                               
 		                </tbody>
 		            </table>
