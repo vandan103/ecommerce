@@ -1,6 +1,6 @@
 <%@page import="project.ConnectionProvider,project.UserProvider, java.sql.*"%>
 <%@include file="header1.jsp"%>
-
+<%@page errorPage="error.jsp" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">

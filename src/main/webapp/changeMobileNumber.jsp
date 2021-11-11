@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider,project.UserProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
 <%@include file="footer.jsp"%>
+<%@page errorPage="error.jsp" %>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
