@@ -42,7 +42,9 @@
 			<h3>Enter Category</h3>
 			<input class="input-style" type="text" name="category"
 				value="<%=rs.getString(3)%>" required="required">
-        Select Image : <input type="file" name="image"> 
+				
+        Select Image : <input type="file" value="<%=rs.getString(6)%>" name="image"> 
+        
 			<hr>
 		</div>
 

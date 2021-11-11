@@ -113,8 +113,8 @@ h3 {
 				<td><i class="fa fa-inr"></i>
 					<%=rs1.getString(4)
 					%></td>
-				<td><a href="incDecQuantity?id=<%=rs1.getString(1)%>&quantity=inc"><i class='fas fa-plus-circle'></i></a><%= rs1.getString(8) %> <a	href="incDecQuantityAction.jsp?id=<%=rs1.getString(1)%>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
-				<td><i class="fa fa-inr"> <%=rs1.getInt(10) %></i></td>
+				<td><a href="incDecQuantity?id=<%=rs1.getString(1)%>&quantity=inc"><i class='fas fa-plus-circle'></i></a><%= rs1.getString(9) %> <a	href="incDecQuantity?id=<%=rs1.getString(1)%>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
+				<td><i class="fa fa-inr"> <%=rs1.getInt(11) %></i></td>
 				<td><a href="removeFromCart?id=<%=rs1.getString(1) %>">Remove <i class='fas fa-trash-alt'></i></a></td>
 			</tr>
         <%}}catch(Exception e){ System.out.print(e); } %>
