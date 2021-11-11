@@ -59,7 +59,7 @@ h3 {
 		<tbody>
 			<%
 			try {
-				ResultSet rs = ProductProvider.getProducts();
+				ResultSet rs = ProductProvider.getProductsAdmin();
 				while (rs.next()) {
 			%>
 			<tr>

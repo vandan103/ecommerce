@@ -55,10 +55,7 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 				<%
 				}
 				%>
-
-
-			</select>
-			 Select Image : <input type="file" name="image">
+			</select> 
 			<hr>
 		</div>
 
@@ -78,6 +75,10 @@ response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate");
 				<option value="no">No</option>
 
 			</select>
+			<hr>
+		</div>
+		<div class="left-div">
+			<input type="file" name="image">
 			<hr>
 		</div>
 		<button class="button">

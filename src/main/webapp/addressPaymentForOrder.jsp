@@ -57,8 +57,8 @@ try {
 					rs1.getString(3)
 					%></td>
             <td><i class="fa fa-inr"></i><%= rs1.getString(4) %> </td>
-            <td> <%= rs1.getString(8) %></td>
-            <td><i class="fa fa-inr"></i>  <%= rs1.getString(10) %></td>
+            <td> <%= rs1.getString(9) %></td>
+            <td><i class="fa fa-inr"></i>  <%= rs1.getString(11) %></td>
             </tr>
          <%}
 			ResultSet rs2 = UserProvider.getUser(email);

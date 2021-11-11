@@ -1,5 +1,6 @@
 package com.controllers;
 
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -46,36 +47,58 @@ public class editProduct extends HttpServlet {
 		String category = request.getParameter("category");
 		String price = request.getParameter("price");
 		String active = request.getParameter("active");
-		Part file=request.getPart("image");
-		String imageFileName=file.getSubmittedFileName();
-		System.out.println("Selected Image File Name : "+imageFileName);
-		String uploadPath="C:\\Users\\146732\\git\\repository2\\ecommerce demo\\src\\main\\webapp\\images\\"+imageFileName;
-		try
-		{
-		
-		FileOutputStream fos=new FileOutputStream(uploadPath);
-		InputStream is=file.getInputStream();
-		
-		byte[] data=new byte[is.available()];
-		is.read(data);
-		fos.write(data);
-		fos.close();
-		
+		Part file = null;
+		try {
+		file=request.getPart("image");
 		}
+		catch(Exception e) {
+			System.out.println("error");
+		}
+		String imageFileName=file.getSubmittedFileName();
+		String type=file.getContentType();
+		System.out.println(file.getContentType());
+		System.out.println("vandan"+imageFileName);
+
 		
-		catch(Exception e)
-		{
-			e.printStackTrace();
+		if(!(type.equals("application/octet-stream"))) {
+			//imageFileName=file.getSubmittedFileName();
+			System.out.println("Selected Image File Name : "+imageFileName);
+			String uploadPath="C:\\Users\\146732\\git\\repository2\\ecommerce demo\\src\\main\\webapp\\images\\"+imageFileName;
+			try
+			{
+			
+			FileOutputStream fos=new FileOutputStream(uploadPath);
+			InputStream is=file.getInputStream();
+			
+			byte[] data=new byte[is.available()];
+			is.read(data);
+			fos.write(data);
+			fos.close();
+			
+			}
+			
+			catch(Exception e)
+			{
+				e.printStackTrace();
+			}
+		}
+		else {
+			System.out.println("hello");
 		}
 
 		try {
 			Connection con = ConnectionProvider.getcon();
 			Statement st = con.createStatement();
+			if(type.equals("application/octet-stream")) {
+				
 			st.executeUpdate("update product set name='" + name + "',category='" + category + "',price='" + price + "',active='"
-			+ active + "',image='"+imageFileName+"' where id='" + id + "'");
-			if(active.equals("No")){
-				st.executeUpdate("delete from cart where pid='"+id+"' and address is NULL");
+			+ active + "' where id='" + id + "'");}
+			else
+			{
+				st.executeUpdate("update product set name='" + name + "',category='" + category + "',price='" + price + "',active='"
+						+ active + "',image='"+imageFileName+"' where id='" + id + "'");
 			}
+//			
 			response.sendRedirect("admin/allProductEditProduct.jsp?msg=done");
 		} catch (Exception e) {
 			System.out.print("exception occurs" + e);
