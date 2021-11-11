@@ -13,7 +13,7 @@
 <table>
         <thead>
           <tr>
-            <th scope="col">S.No</th>
+            <th scope="col">Image</th>
             <th scope="col">Product Name</th>
             <th scope="col">category</th>
             <th scope="col"><i class="fa fa-inr"></i>  Price</th>
@@ -37,7 +37,7 @@ try{
     sno+=1;
 %>
           <tr>
-            <td><% out.print(sno);%></td>
+           <td><img src="images/<%= rs.getString(21) %>" width="100" height="100" ></td>
             <td><%=rs.getString(17) %></td>
             <td><%=rs.getString(18) %></td>
             <td><i class="fa fa-inr"></i><%=rs.getString(19) %> </td>

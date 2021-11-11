@@ -76,7 +76,7 @@ h3 {
 		</thead>
 		<thead>
 			<tr>
-				<th scope="col">S.No</th>
+				<th scope="col">Image</th>
 				<th scope="col">Product Name</th>
 				<th scope="col">Category</th>
 				<th scope="col"><i class="fa fa-inr"></i> price</th>
@@ -95,11 +95,10 @@ h3 {
 				<%
 				sno = sno + 1;
 				%>
-				<td>
-					<%
-					out.println(sno);
-					%>
-				</td>
+				
+                <td><img src="images/<%= rs1.getString(6) %>" width="100" height="100" ></td>
+				
+				
 				<td>
 					<%=
 					rs1.getString(2)
