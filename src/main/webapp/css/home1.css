@@ -284,10 +284,11 @@ ul.social-icons li {
 	color: black;
 	font-family: 'Rubik', sans-serif;
 	text-transform: uppercase;
+	font-weight: 700;
 }
 
 .nav-link:hover {
-	color: black;
+	color: blue;
 }
 
 .search {
@@ -346,6 +347,9 @@ btn1{
 h1 {
 	font-weight: 700;
 }
+
+
+
 
 
 

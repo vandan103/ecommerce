@@ -1,47 +1,114 @@
 <%@page import="project.ConnectionProvider, java.sql.*"%>
 <%@include file="changeDetailsHeader.jsp"%>
-<%@include file="footer.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
 <html>
 <head>
-<link rel="stylesheet" href="css/changeDetails.css">
-<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-<title>Message Us</title>
+	<title>Change Password</title>
+	<style>
+		.inf-content{
+					    border:1px solid #DDDDDD;
+					    -webkit-border-radius:10px;
+					    -moz-border-radius:10px;
+					    border-radius:10px;
+					    box-shadow: 7px 7px 7px rgba(0, 0, 0, 0.3);
+					}
+				.size {
+					padding:2rem !important;
+				}			  
+	</style>
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 </head>
 <body>
-<% String msg=request.getParameter("msg");
-if("notmatch".equals(msg)){
-%>
-<h3 class="alert">New password and Confirm password does not match!</h3>
-<%} %>
-<%if("wrong".equals(msg)){ %>
-<h3 class="alert">Your old Password is wrong!</h3>
-<%} %>
-<%if("done".equals(msg)){ %>
-
-<h3 class="alert">Password change successfully!</h3>
-<%} %>
-
-<%if("invalid".equals(msg)){ %>
-
-<h3 class="alert">Some thing went wrong! Try again!</h3>
-<%} %>
-
-<form action="changePassword" method="post">
-<h3>Enter Old Password</h3>
- 				<input class="input-style" type="password" name="oldpwd" placeholder=" enter your old password " required="required">
- 
-  <hr>
- <h3>Enter New Password</h3>
-  				<input class="input-style" type="password" name="newpwd" placeholder=" enter your new password " required="required">
- 
- <hr>
-<h3>Enter Confirm Password</h3>
- 				<input class="input-style" type="password" name="cnfpwd" placeholder=" confirm your  password " required="required">
-
-<hr>
- <button class="button" type="submit">save<i class='far fa-arrow-alt-circle-right'></i> </button>
-</form>
-</body>
 <br><br><br>
+	<div class="container bootstrap snippets bootdey">
+		<div class="panel-body inf-content">
+		    <div class="row">
+		        <div class="col-md-4 size">
+		            <img alt="" style="width:600px;" title="" class="img-circle img-thumbnail isTooltip" src="https://bootdey.com/img/Content/avatar/avatar7.png" data-original-title="Usuario"> 
+		            
+		        </div>
+		        <div class="col-md-6">
+		            <br>
+		            <div class="table-responsive">
+		            <table class="table table-user-information">		                
+		                <tbody>	
+		                <form action="changePassword" method="post">	                
+		                    <tr>    
+		                        <td>
+		                            <!-- <strong>
+		                                <span class="text-primary"></span>    
+		                                Enter Old Password                                                
+		                            </strong> -->
+		                            <div class="form-group">
+									    	<label for="exampleInputPassword1">Enter Old Password</label>
+									    	<input type="password" class="form-control" id="exampleInputPassword1" name="oldpwd" placeholder="Password" required>
+									 </div>
+									<br>
+		                             <div class="form-group">
+									    	<label for="exampleInputPassword2">Enter New Password</label>
+									    	<input type="password" class="form-control" id="exampleInputPassword2" name="newpwd" placeholder="Password" required>
+									 </div>
+									 <br>
+									 <div class="form-group">
+									    	<label for="exampleInputPassword3">Confirm New Password</label>
+									    	<input type="password" class="form-control" id="exampleInputPassword3" name="cnfpwd" placeholder="Password" required>
+									 </div>
+									 <br>
+									 <button type="submit" class="btn btn-primary">Update Password</button>
+		                        	<% String msg=request.getParameter("msg");
+										if("notmatch".equals(msg)){
+										%>
+										<h6 style="color:red;">New password and Confirm password does not match!</h6>
+										<%} %>
+										<%if("wrong".equals(msg)){ %>
+										<h6 style="color:red;">Your old Password is wrong!</h6>
+										<%} %>
+										<%if("done".equals(msg)){ %>
+										
+										<h6 style="color:green;">Password change successfully!</h6>
+										<%} %>
+										
+										<%if("invalid".equals(msg)){ %>
+										
+										<h6 style="color:red;">Some thing went wrong! Try again!</h6>
+										<%} %>
+		                        	
+		                        </td>
+		                        <!-- <td class="text-primary">
+		                            harsh
+		                        </td> -->
+		                    </tr>
+		                    
+		                    <!-- <tr>        
+		                        <td>
+		                            <strong>
+		                                <span class="text-primary"></span> 
+		                                Enter New Password                                                
+		                            </strong>
+		                        </td>
+		                        <td class="text-primary">
+		                            @gmail
+		                        </td>
+		                    </tr>
+		                    <tr>        
+		                        <td>
+		                            <strong>
+		                                <span class="text-primary"></span>
+		                                Confirm New Password
+		                            </strong>
+		                        </td>
+		                        <td class="text-primary">
+		                           1234
+		                        </td>
+		                    </tr> -->
+		                </form>                               
+		                </tbody>
+		            </table>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>   
+	
+</body>
 </html>
