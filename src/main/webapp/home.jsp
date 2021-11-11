@@ -1,7 +1,7 @@
 <%@page import="project.ConnectionProvider,project.ProductProvider, java.sql.*"%>
 <%@include file="header1.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
-
+<%@page errorPage="error.jsp" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">

@@ -53,7 +53,7 @@ public class addNewProduct extends HttpServlet {
 		Part file=request.getPart("image");
 		String imageFileName=file.getSubmittedFileName();
 		System.out.println("Selected Image File Name : "+imageFileName);
-		String uploadPath="C:\\Users\\146720\\git\\final_ecommerce\\ecommerce\\src\\main\\webapp\\images\\"+imageFileName;
+		String uploadPath="C:\\Users\\146732\\git\\repository2\\ecommerce demo\\src\\main\\webapp\\images\\"+imageFileName;
 		try
 		{
 		

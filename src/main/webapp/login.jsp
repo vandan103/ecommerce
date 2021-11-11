@@ -67,7 +67,7 @@
 				            <input type="password" name="password" placeholder="Enter Password" pattern="^((?=.*\d)(?=.*[A-Z])(?=.*\W).{8,})$" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters" class="form-control" id="exampleInputPassword1" required>
 				          </div>
 				          <div class="d-flex align-items-center justify-content-between">
-				            <div class="d-flex align-items-center"><input name="" type="checkbox" value="" /> <span class="pl-2 font-weight-bold">Remember Me</span></div>
+<!-- 				            <div class="d-flex align-items-center"><input name="" type="checkbox" value="" /> <span class="pl-2 font-weight-bold">Remember Me</span></div> -->
 				            <div><a href="forgotPassword.jsp">Forgot Password?</a></div>
 				          </div>
 				          <div class="pb-2">

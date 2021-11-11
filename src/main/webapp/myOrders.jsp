@@ -1,6 +1,6 @@
 <%@page import="project.ConnectionProvider,project.UserProvider, java.sql.*"%>
 <%@include file="header1.jsp"%>
-
+<%@page errorPage="error.jsp" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -153,7 +153,8 @@
 	                    <table class="table table-borderless table-shopping-cart">
 	                        <thead class="text-muted">
 	                            <tr class="small text-uppercase">
-	                                <th scope="col" style="padding-left: 140px;">Product Name</th>
+	                                 
+	  	                                <th scope="col" style="padding-left: 140px;">Product Name</th>
 	                                <th scope="col" style="padding-left: 0px;">Category</th>
 	                                <th scope="col" width="120">Quantity</th>
 	                                <th scope="col" width="120">Price</th>
@@ -166,6 +167,7 @@
 	                        </thead>
 	                        <tbody>
 	                        <%
+	                        
 								int sno=0;
 								try{
 									

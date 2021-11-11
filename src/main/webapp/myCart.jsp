@@ -1,6 +1,7 @@
 <%@page import="project.ConnectionProvider,project.CartProvider, java.sql.*"%>
+<%@include file="header1.jsp"%>
 <% response.setHeader("Cache-Control", "no-cache,no-store,must-revalidate"); %>
-
+<%@page errorPage="error.jsp" %>
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
@@ -145,38 +146,7 @@
 		</style>
 	</head>
 <body>
-	<%String name=session.getAttribute("name").toString(); %>
-    <%String email=session.getAttribute("email").toString(); %>
-	<nav class="navbar navbar-expand-lg">
-		<div class="container">
-			<a class="navbar-brand" href="#">Ecommerce</a>
-			<button class="navbar-toggler" type="button"
-				data-bs-toggle="collapse" data-bs-target="#navbarScroll"
-				aria-controls="navbarScroll" aria-expanded="false"
-				aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarScroll">
-				<ul class="navbar-nav m-auto my-2 my-lg-0">
-					<li class="nav-item"><a class="nav-link active" href="home.jsp">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="myCart.jsp">My Cart</a></li>
-					<li class="nav-item"><a class="nav-link" href="myOrders.jsp">My Orders</a></li>
-					<li class="nav-item"><a class="nav-link" href="changeDetails.jsp">Change Details</a></li>
-					<li class="nav-item"><a class="nav-link" href="messageUs.jsp">Message Us</a></li>
-					<li class="nav-item"><a class="nav-link" href="about.jsp">About</a></li>
-					<li class="nav-item"><a class="nav-link" href="logout.jsp">Logout</a></li>
-				</ul>
-				<form class="d-flex" action="searchHome.jsp" method="post">
-					<input class="px-2 search" type="search" placeholder="Search"
-						aria-label="Search">
-					<button class="btn0" type="submit">Search</button>
-				<%-- <a href="#"><h5 style="margin-right: 3px;margin-left: 2px;color:black;"><% out.println(name); %> <i class='glyphicon glyphicon-search'></i></h5></a> --%>
-				</form>
-			</div>
-		</div>
-	</nav>
-	
-	<!--Displaying products in myCart page  -->
+
 	
 	<%
 	String msg = request.getParameter("msg");
@@ -219,7 +189,9 @@
 									<th scope="col">Product</th>
 									<th scope="col" style="padding-left: 0px;">Category</th>
 									<th scope="col" width="100">Quantity</th>
-									<th scope="col" width="140">Price</th>									
+									<th scope="col" width="140">Price</th>	
+						          <th scope="col" width="140">Sub Total</th>									
+																	
 								</tr>
 							</thead>
 							
@@ -243,7 +215,9 @@
 									</td>							<!-- category -->
 									<td class="text-center-left" style="padding-left: 0px;"><%=rs1.getString(3)%></td>
 									<td><a href="incDecQuantity?id=<%=rs1.getString(1)%>&quantity=inc"><i class='fas fa-plus-circle'></i></a><%= rs1.getString(9) %> <a	href="incDecQuantity?id=<%=rs1.getString(1)%>&quantity=dec"><i class='fas fa-minus-circle'></i></a></td>
-									<td><i class="fa fa-inr"></i><%=rs1.getString(11)%></td>
+									<td><i class="fa fa-inr"></i><%=rs1.getString(10)%></td>
+								<td><i class="fa fa-inr"></i><%=rs1.getString(11)%></td>
+									
 									<td class="text-right d-none d-md-block">
 									<a href="removeFromCart?id=<%=rs1.getString(1) %>" class="btn btn-light" data-abc="true">Remove</a></td>
 								</tr>
@@ -254,27 +228,16 @@
 				</div>
 			</aside>
 			<aside class="col-lg-3">
-				<!-- <div class="card mb-3">
-					<div class="card-body">
-						<form>
-							<div class="form-group">
-								<label>Have coupon?</label>
-								<div class="input-group">
-									<input type="text" class="form-control coupon" name=""
-										placeholder="Coupon code"> <span
-										class="input-group-append">
-										<button class="btn btn-primary btn-apply coupon">Apply</button>
-									</span>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div> -->
+				<%
+								try {
+									ResultSet rs2 = CartProvider.getCartTotal(email);
+									while (rs2.next()) {	
+							%>
 				<div class="card">
 					<div class="card-body">
 						<dl class="dlist-align">						
 							<dt>Total price:</dt>
-							<dd class="text-right ml-3">69.97</dd>
+							<dd class="text-right ml-3"><%= rs2.getString(1) %></dd>
 						</dl>
 						<dl class="dlist-align">
 							<dt>Discount:</dt>
@@ -283,8 +246,10 @@
 						<dl class="dlist-align">
 							<dt>Total:</dt>
 							<dd class="text-right text-dark b ml-3">
-								<strong>59.97</strong>
+								<strong><%= rs2.getString(1) %></strong>
 							</dd>
+														<%}}catch(Exception e){ System.out.print(e); } %> 
+							
 						</dl>
 						<hr>
 						<a href="addressPaymentForOrder.jsp" class="btn btn-out btn-primary btn-square btn-main"
