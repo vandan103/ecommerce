@@ -35,8 +35,6 @@
 								while(rs.next()){
 						%>
 		                <form action="addChangeAddress" method="post">	                
-		                    <!-- <tr>    
-		                        <td> -->
 		                        	<div class="form-group">
 										<label for="inputAddress">Address</label>
 										<input type="text" name="address" class="form-control" id="inputAddress" value="<%=rs.getString(8)%>" placeholder="House No" required>

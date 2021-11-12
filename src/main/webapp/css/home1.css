@@ -293,28 +293,30 @@ ul.social-icons li {
 
 .search {
 	height: 40px;
-	width: 80%;
+	width: 70%;
 	border-radius: 60px;
 	outline: none;
 	margin-right: -35px;
 	font-family: 'Rubik', sans-serif;
 	border: 2px solid rgb(248, 26, 92);
+	margin-top: 7px;
 }
 
 .btn0 {
 	height: 40px;
-	width: 80px;
+	width: 60px;
 	outline: none;
 	background: rgb(248, 26, 92);
 	color: white;
 	border-radius: 60px;
 	font-weight: 700;
+	margin-top: 7px;
 }
 
 /* ------------------------nav bar over-------------------------*/
 
 #Harsh {
-	background-image: url('../images/sample.jpg');
+	background-image: url('../images/sample2.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	height: 100vh;
@@ -323,8 +325,9 @@ ul.social-icons li {
 }
 
 #Harsh h1 {
-	font-size: 4rem;
-	font-weight: 700;
+	font-size: 2.5rem;
+	font-weight: 800;
+	font-family: "Times New Roman", Times, serif;
 }
 
 btn1{
@@ -346,9 +349,13 @@ btn1{
 
 h1 {
 	font-weight: 700;
+	font-family: "Times New Roman", Times, serif;
 }
 
 
+.container, .container-lg, .container-md, .container-sm, .container-xl {
+    max-width: 1240px !important;
+}
 
 
 
