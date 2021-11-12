@@ -8,146 +8,26 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	   <!-- Bootstrap CSS -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<!-- <link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Rubik:wght@300&display=swap" rel="stylesheet">	   
    		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/home1.css">
+		 -->
 		
 		<!-- myCart scripts -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="css/home1.css">
+		<link rel="stylesheet" href="css/myCart.css">
 		<script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js'></script>
 		<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
 		<!--myCart scripts  -->
 		
 		<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 		<title>Home</title>
-		<style>
-			@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
-
-				body {
-				    background-color: #eeeeee;
-				    font-family: 'Open Sans', serif;
-				    font-size: 14px
-				}
-				
-				.container-fluid {
-				    margin-top: 70px
-				}
-				
-				.card-body {
-				    -ms-flex: 1 1 auto;
-				    flex: 1 1 auto;
-				    padding: 1.40rem
-				}
-				
-				.img-sm {
-				    width: 80px;
-				    height: 80px
-				}
-				
-				.itemside .info {
-				    padding-left: 15px;
-				    padding-right: 7px
-				}
-				
-				.table-shopping-cart .price-wrap {
-				    line-height: 1.2
-				}
-				
-				.table-shopping-cart .price {
-				    font-weight: bold;
-				    margin-right: 5px;
-				    display: block
-				}
-				
-				.text-muted {
-				    color: #969696 !important
-				}
-				
-				a {
-				    text-decoration: none !important
-				}
-				
-				.card {
-				    position: relative;
-				    display: -ms-flexbox;
-				    display: flex;
-				    -ms-flex-direction: column;
-				    flex-direction: column;
-				    min-width: 0;
-				    word-wrap: break-word;
-				    background-color: #fff;
-				    background-clip: border-box;
-				    border: 1px solid rgba(0, 0, 0, .125);
-				    border-radius: 0px
-				}
-				
-				.itemside {
-				    position: relative;
-				    display: -webkit-box;
-				    display: -ms-flexbox;
-				    display: flex;
-				    width: 100%
-				}
-				
-				.dlist-align {
-				    display: -webkit-box;
-				    display: -ms-flexbox;
-				    display: flex
-				}
-				
-				[class*="dlist-"] {
-				    margin-bottom: 5px
-				}
-				
-				.coupon {
-				    border-radius: 1px
-				}
-				
-				.price {
-				    font-weight: 600;
-				    color: #212529
-				}
-				
-				.btn.btn-out {
-				    outline: 1px solid #fff;
-				    outline-offset: -5px
-				}
-				
-				.btn-main {
-				    border-radius: 2px;
-				    text-transform: capitalize;
-				    font-size: 15px;
-				    padding: 10px 19px;
-				    cursor: pointer;
-				    color: #fff;
-				    width: 100%
-				}
-				
-				.btn-light {
-				    color: #ffffff;
-				    background-color: #F44336;
-				    border-color: #f8f9fa;
-				    font-size: 12px
-				}
-				
-				.btn-light:hover {
-				    color: #ffffff;
-				    background-color: #F44336;
-				    border-color: #F44336
-				}
-				
-				.btn-apply {
-				    font-size: 11px
-				}
-		</style>
 	</head>
-<body>
-
-	
+<body>	
 	<%
 	String msg = request.getParameter("msg");
 	if ("notpossible".equals(msg)) {
@@ -159,38 +39,38 @@
 	<%
 	if ("inc".equals(msg)) {
 	%>
-	<h5 style="color:green;">Quantity Increased Successfully!</h5>
+	<h6 style="color:green;text-align:center;">Quantity Increased Successfully!</h6>
 	<%
 	}
 	%>
 	<%
 	if ("dec".equals(msg)) {
 	%>
-	<h5 style="color:green;">Quantity Decreased Successfully!</h5>
+	<h6 style="color:green;text-align:center;">Quantity Decreased Successfully!</h6>
 	<%
 	}
 	%>
 	<%
 	if ("removed".equals(msg)) {
 	%>
-	<h5 style="color:green;">Product Successfully Removed!</h5>
+	<h6 style="color:green;text-align:center;">Product Successfully Removed!</h6>
 	<%
 	}
 	%>
 	
-	<section class="container-fluid">
+	<section class="container-lg-fluid">
 		<div class="row">
 			<aside class="col-lg-9">
 				<div class="card">
 					<div class="table-responsive">
 						<table class="table table-borderless table-shopping-cart">
 							<thead class="text-muted">
-								<tr class="small text-uppercase">
-									<th scope="col">Product</th>
-									<th scope="col" style="padding-left: 0px;">Category</th>
-									<th scope="col" width="100">Quantity</th>
-									<th scope="col" width="140">Price</th>	
-						          <th scope="col" width="140">Sub Total</th>									
+								<tr class="big text-uppercase">
+									<th scope="col" class="myCart_menu" style="padding-left: 100px;"><b>Product Name</b></th>
+									<th scope="col" class="myCart_menu" style="padding-left: 0px;color: black"><b>Category</b></th>
+									<th scope="col" class="myCart_menu" width="100"><b>Quantity</b></th>
+									<th scope="col" class="myCart_menu" width="140"><b>Price</b></th>	
+						          <th scope="col" class="myCart_menu" width="140"><b>Sub Total</b></th>									
 																	
 								</tr>
 							</thead>
@@ -206,7 +86,7 @@
 									<td>
 										<figure class="itemside align-items-center">
 											<div class="aside">
-												<img src="images/<%=rs1.getString(6) %>" class="img-sm"> <!-- image -->
+												<img src="images/<%=rs1.getString(6) %>" class="img-sm" style="width:110px;height:80px"> <!-- image -->
 											</div>
 											<figcaption class="info"><!-- product name -->
 												<a href="#" class="title text-dark" data-abc="true"><%=rs1.getString(2)%></a>

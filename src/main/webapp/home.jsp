@@ -21,46 +21,44 @@
 	<section class="main" id="Harsh">
 		<div class="container py-5">
 			<div class="row py-5">
-				<div class="col-lg-7 pt-5 text-center">
-					<h1 class="pt-5">Welcome to Ecommerce Website</h1>
+				<div class="col-lg-5 pt-5 text-center">
+					<h1 class="pt-3">Welcome to Ecommerce</h1>
 					<a href="#down"><button class="btn btn-primary btn-lg size">Our Products</button></a>
 				</div>
 			</div>
 		</div>
 	</section>
 	
-	<!-------------- Displaying products ------------>
-	
-	<%-- <%
-	String msg = request.getParameter("msg");
-	if ("added".equals(msg)) {
-	%>
-	<h3 class="alert">Product added successfully!</h3>
-	<%
-	}
-	%>
-	<%
-	if ("exist".equals(msg)) {
-	%>
-	<h3 class="alert">Product already exist in you cart! Quantity
-		increased!</h3>
-	<%
-	}
-	%>
-	<%
-	if ("invalid".equals(msg)) {
-	%>
-	<h3 class="alert">something went wrong!! please try again!!</h3>
-	<%
-	}
-	%> --%>
-	
+	<!-------------- Displaying products ------------>	
 	<section class="product" id="down">
 		<div class="container py-5">	
 			<div class="row py-5">
 				<div class="col-lg-5 m-auto text-center">
 					<h1>Available Products</h1>
 					<h6 style="color: red;">Shop here!</h6>
+					<%
+						String msg = request.getParameter("msg");
+						if ("added".equals(msg)) {
+						%>
+						<h6 style="color:green;">Product added successfully!</h6>
+						<%
+						}
+						%>
+						<%
+						if ("exist".equals(msg)) {
+						%>
+						<h6 style="color:green;">Product already exist in you cart! Quantity
+							increased!</h6>
+						<%
+						}
+						%>
+						<%
+						if ("invalid".equals(msg)) {
+						%>
+						<h6 style="color:red;">something went wrong!! please try again!!</h6>
+						<%
+						}
+					%>
 				</div>
 			</div>
 		<div class="row">
@@ -74,13 +72,14 @@
 				<div class="col-3 text-center">
 					<div class="card border-0 bg-light mb-2">
 						<div class="card-body">
-							<img src="images/<%= rs.getString(6) %>" class="img-fluid">
+							<img src="images/<%= rs.getString(6) %>" class="img-fluid" style="width:180px;height:180px">
 						</div>
 					</div>
 					<h6><%=rs.getString(2) %></h6>
 					<p><%=rs.getString(3) %></p>
 					<p><%=rs.getString(4) %></p>
-					<p><a href="AddToCart?id=<%=rs.getString(1) %>"><button class="btn btn-primary btn-md">Add to cart <i class='fas fa-cart-plus'></i></button></a></p>					
+					<a href="#down"></a><p><a href="AddToCart?id=<%=rs.getString(1) %>"><button class="btn btn-primary btn-md">Add to cart <i class='fas fa-cart-plus'></i></button></a></p>					
+					</a>
 				</div>
 				
 			<% }}
@@ -89,30 +88,6 @@
 				}
 				%>
 			</div>
-				<%
-						String msg = request.getParameter("msg");
-						if ("added".equals(msg)) {
-						%>
-						<h6 style="color:red;">Product added successfully!</h6>
-						<%
-						}
-						%>
-						<%
-						if ("exist".equals(msg)) {
-						%>
-						<h6 style="color:red;">Product already exist in you cart! Quantity
-							increased!</h6>
-						<%
-						}
-						%>
-						<%
-						if ("invalid".equals(msg)) {
-						%>
-						<h6 style="color:red;">something went wrong!! please try again!!</h6>
-						<%
-						}
-					%>
-				
 		</div>
 	</section>
 
